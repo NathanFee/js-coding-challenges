@@ -8,7 +8,10 @@ If the parameter values are equal to each other, then return the string '-1'.
 
 
 const checkNums = function (num1,num2) {
-// Answer here
+  if(num1 === num2){
+    return '-1'
+  }
+  return num2 > num1
 }
 
 module.exports = checkNums
