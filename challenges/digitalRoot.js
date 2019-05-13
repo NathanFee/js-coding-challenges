@@ -19,7 +19,17 @@ Examples:
 
 
 let digitalRoot = (n) => {
-  // Answer here
+  // turn the number into an array of characters
+  let chars = n.toString().split('')
+  // if the length of the array is one, we're done return the number
+  if (chars.length === 1){
+    return n
+  }
+  // else we're not done, change the chars to nums and sum numbers
+  let nums = chars.map(x => parseInt(x))
+  let reducedSum = nums.reduce((acc,curr) => acc + curr)
+  // call this function using the reduced sum
+  return digitalRoot(reducedSum)
 }
 
 module.exports = digitalRoot
