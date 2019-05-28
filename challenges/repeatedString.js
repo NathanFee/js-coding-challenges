@@ -18,7 +18,19 @@
 // Sample input s= "aba" n=10, sample output is 7 as the first 10 letters of the infinite sting would be "abaabaabaa" and there are 7 a's in the string
 
 function repeatedString(s, n) {
-  
+  const chars = s.split('')
+  const remainder = n % s.length
+  const aIndices = chars.map((x,i) => x === 'a'? i: -1).filter(x => x !== -1)
+
+  let  count = parseInt(n / s.length) * aIndices.length
+
+  for(let i = 0; i < aIndices.length; i++) {
+    if(aIndices[i] < remainder){
+      count++
+    }
+  }
+  return count
 }
+
 
 module.exports = repeatedString

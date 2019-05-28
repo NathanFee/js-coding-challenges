@@ -14,6 +14,6 @@ describe('Reapeated String:', function () {
   })
 
   it('String c', function () {
-    expect(repeatedString(b, 1000000)).toEqual(1000000)
+    expect(repeatedString(c, 1000000)).toEqual(1000000)
   })
 })
